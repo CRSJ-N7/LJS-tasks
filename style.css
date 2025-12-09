@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main__matrix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 5px;
+}
+
+.matrix__input__container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.matrix__input { 
+    width: 75px;
+}
+.matrix__input::placeholder {
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.5px;
+    padding: 5px;
+    transition: opacity 0.2s ease;
+}
+.matrix__input:focus::placeholder {
+ opacity: 0;   
+}
+.matrix__input__button {
+    width: 90px;
+    padding: 5px;
+}
+
+.container__matrix { 
+padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.container__matrix__item {
+    font-size: 15px;
+    padding: 1px;
+    margin: 1px;
+}
