@@ -1,6 +1,8 @@
 export const matrix = length => {
    let arr = [];
-   for (let i = 0; i < length; i++) arr.push([]);
+   for (let i = 0; i < length; i++) {
+      arr.push([]);
+   }
 
    let numbers = 1;
    let iterationsSum = length * length;
@@ -12,8 +14,9 @@ export const matrix = length => {
    let firstStep = true;
 
    while (iterationsSum > 0) {
-// первый шаг всегда одинаковый
-      if (firstStep === true) { // после самой первой итерации скипаем эту часть
+      // первый шаг всегда одинаковый
+      // после самой первой итерации (первый шаг = длина первого массива)
+      if (firstStep === true) { 
          for (let j = 0; j < iterationsFirstStep; j++) {
             arr[0][j] = numbers++;
          }
@@ -23,7 +26,6 @@ export const matrix = length => {
          currentCol = length - 1;
          continue;
       }
-
       // ХУЯЧИМ ВНИЗ
       for (let i = 1; i <= step && iterationsSum > 0; i++) {
          arr[currentRow + i][currentCol] = numbers++;
@@ -38,7 +40,7 @@ export const matrix = length => {
       }
       currentCol -= step;
 
-      step--; // два шага (две итерации) сделаны, значит уменьшаем шаг на 1;
+      step--; // два шага (две итерации) сделаны, значит уменьшаем шаг на 1
 
       // ХУЯЧИМ ВВЕРХ
       for (let i = 1; i <= step && iterationsSum > 0; i++) {
@@ -84,7 +86,7 @@ console.log(matrix(5));
         [12, 13, 14, 5],     2) идём вниз, пока не врежемся
         [11, 16, 15, 6],     3) идём влево, пока не врежемся
         [10, 9,  8,  7],     4) идём вверх, пока не врежемся
-                     5) идём вправо, пока не врежемся - и повторяем цикл.
+                             5) идём вправо, пока не врежемся - и повторяем цикл.
         
         4, 3, 3, 2, 2, 1, 1 - шаги
 

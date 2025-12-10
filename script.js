@@ -1,6 +1,6 @@
 'use strict'
 
-import { matrix } from './matrix.js'
+import { matrix } from './tasks/matrix.js'
 
 const $mainContainer = document.body.querySelector('.main__container');
 const $matrixInput = document.body.querySelector('.matrix__input')
