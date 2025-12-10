@@ -24,17 +24,18 @@ const render = (num) => {
 
     const spiralMatrix = matrix(+num);
     $matrixInput.value = '';
+    $matrixContainer.innerHTML = '';
 
     spiralMatrix.forEach((element, index) => {
         
         const matrixValue = document.createElement('div');
         matrixValue.innerHTML = JSON.stringify(element);
         matrixValue.classList.add('container__matrix__item')
-        setTimeout(() => $matrixContainer.append(matrixValue), index * 1000);;
+        setTimeout(() => $matrixContainer.append(matrixValue), index * 300);
         
     })
 
-}
+}   
 
 $matrixInputButton.addEventListener('click', () => {
     const value = $matrixInput.value;
