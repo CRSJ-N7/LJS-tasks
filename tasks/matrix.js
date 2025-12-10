@@ -1,4 +1,4 @@
-export const matrix = length => {
+export const matrix = (length) => {
    let arr = [];
    for (let i = 0; i < length; i++) {
       arr.push([]);
@@ -16,11 +16,11 @@ export const matrix = length => {
    while (iterationsSum > 0) {
       // первый шаг всегда одинаковый
       // после самой первой итерации (первый шаг = длина первого массива) скипаем полностью этот блок
-      if (firstStep === true) { 
+      if (firstStep === true) {
          for (let j = 0; j < iterationsFirstStep; j++) {
             arr[0][j] = numbers++;
          }
-         firstStep = false; 
+         firstStep = false;
          iterationsSum -= iterationsFirstStep;
          currentRow = 0;
          currentCol = length - 1;
@@ -78,7 +78,7 @@ console.log(matrix(5));
         3, 2, 2, 1, 1 - шаги.
 
 */
-        
+
 /*
         матрица(5)
     

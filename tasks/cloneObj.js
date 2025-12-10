@@ -6,10 +6,10 @@
  Функция не должна использовать хак с JSON.parse(JSON.stringify(data)).
 */
 
-const obj1 = { user: 1, id: 1, name: 'Chris'}
+const obj1 = { user: 1, id: 1, name: 'Chris' }
 const obj2 = [3, 5, 'data'];
 const obj3 = { data: obj1, meta: obj2 }
-const obj4 = { meta: 3, test: obj1}
+const obj4 = { meta: 3, test: obj1 }
 
 const arr1 = [1, 2,];
 const arr2 = [arr1, [obj3]];
@@ -25,16 +25,16 @@ const cloneObj = (obj) => {
     }
 
     const clone = Array.isArray(obj) ? [] : {};
-    
+
 
     for (let keys of Object.keys(obj)) {
         console.log(`currentObjKey :`, obj[keys], `| typeof : `, typeof obj[keys]);
-            clone[keys] = cloneObj(obj[keys])
-        }
+        clone[keys] = cloneObj(obj[keys])
+    }
 
     return clone;
 
-    }
+}
 
 
 const newObj = cloneObj(obj4);

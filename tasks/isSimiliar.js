@@ -4,11 +4,11 @@
 
 const isSimiliar = (arr) => {
     const isSimiliarArr = [];
-        for (i = 0; i < arr.length-1; i++) {
-            let firstString = arr[i].at(0) + arr[i].at(-1);
-            let secondString = arr[i+1].at(0) + arr[i+1].at(-1)
-            firstString === secondString ? isSimiliarArr.push(true) : isSimiliarArr.push(false);
-        }
+    for (i = 0; i < arr.length - 1; i++) {
+        let firstString = arr[i].at(0) + arr[i].at(-1);
+        let secondString = arr[i + 1].at(0) + arr[i + 1].at(-1)
+        firstString === secondString ? isSimiliarArr.push(true) : isSimiliarArr.push(false);
+    }
 
     return isSimiliarArr;
 }
