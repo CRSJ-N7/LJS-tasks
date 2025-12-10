@@ -15,7 +15,7 @@ export const matrix = length => {
 
    while (iterationsSum > 0) {
       // первый шаг всегда одинаковый
-      // после самой первой итерации (первый шаг = длина первого массива)
+      // после самой первой итерации (первый шаг = длина первого массива) скипаем полностью этот блок
       if (firstStep === true) { 
          for (let j = 0; j < iterationsFirstStep; j++) {
             arr[0][j] = numbers++;
