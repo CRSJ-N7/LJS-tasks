@@ -7,7 +7,8 @@ const $matrixInput = document.body.querySelector('.matrix__input')
 const $matrixInputButton = document.body.querySelector('.matrix__input__button')
 const $matrixContainer = document.body.querySelector('.container__matrix')
 
-console.log($mainContainer);
+console.dir($mainContainer);
+console.dir($matrixInputButton);
 console.log($matrixInputButton);
 
 const render = (num) => {
@@ -31,7 +32,7 @@ const render = (num) => {
         const matrixValue = document.createElement('div');
         matrixValue.innerHTML = JSON.stringify(element);
         matrixValue.classList.add('container__matrix__item')
-        setTimeout(() => $matrixContainer.append(matrixValue), index * 300);
+        setTimeout(() => $matrixContainer.append(matrixValue), index * 200);
         
     })
 

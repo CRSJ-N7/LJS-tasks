@@ -6,10 +6,10 @@
  Функция не должна использовать хак с JSON.parse(JSON.stringify(data)).
 */
 
-const obj1 = { user: 1, id: 1, name: 'Chris' }
 const obj2 = [3, 5, 'data'];
+const obj1 = { user: 1, id: 1, name: 'Chris'}
 const obj3 = { data: obj1, meta: obj2 }
-const obj4 = { meta: 3, test: obj1 }
+const obj4 = { meta: 3, test: obj1}
 
 const arr1 = [1, 2,];
 const arr2 = [arr1, [obj3]];
@@ -17,31 +17,34 @@ const arr3 = [arr1, obj2];
 
 const primitive = 532;
 
+
 const cloneObj = (obj) => {
 
     if (typeof obj !== 'object' && obj !== null && !Array.isArray(obj)) {
-        console.log(`Этот объект мы вовзращаем сразу : `, obj);
+        console.log(`Этот объект мы вовзращаем : `, obj);
         return obj;
     }
 
-    const clone = Array.isArray(obj) ? [] : {};
-
+    const clone = Array.isArray(obj) ? [] : {}; 
+    
 
     for (let keys of Object.keys(obj)) {
         console.log(`currentObjKey :`, obj[keys], `| typeof : `, typeof obj[keys]);
-        clone[keys] = cloneObj(obj[keys])
-    }
+            clone[keys] = cloneObj(obj[keys])
+        }
 
     return clone;
 
-}
+    }
 
 
-const newObj = cloneObj(obj4);
+const newObj = cloneObj(arr2);
 console.log(newObj); // оказывается показывает хуйню, не показывая вложенные объекты полностью. Вот это прикол
 console.log(JSON.stringify(newObj, null, 2)); // а вот так норм
 
-newObj.newValue = 'some value';
-console.log(newObj, arr2);
-let someprimitive = 123;
-let newObj2 = cloneObj(someprimitive);
+// console.log(typeof([]));
+
+// newObj.newValue = 'some value';
+// console.log(newObj, arr2);
+// let someprimitive = 123;
+// let newObj2 = cloneObj(someprimitive);
